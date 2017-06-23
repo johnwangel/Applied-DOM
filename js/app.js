@@ -68,7 +68,7 @@
    */
 
    btn1.addEventListener('click', function() {
-    setMyLightGreen.apply(btn1);
+    setMyLightGreen.apply(this);
    });
 
   /*
@@ -117,7 +117,7 @@
    * to set the context to the correct object
    *   and passing two aditional arguments, event and 'light-green'
    */
-   btn5.addEventListener('click', function(event){
+   btn5.addEventListener('click', () => {
     var myArray = [event, 'light-green'];
     setMyLightClass.apply(btn5, myArray);
    });
@@ -132,7 +132,7 @@
    */
 
    btn6.addEventListener('click', function(){
-    setMyLightGreen.call(btn6);
+    setMyLightGreen.call(this);
    });
 
   /*
@@ -159,7 +159,7 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
    btn8.addEventListener('click', function(e){
-    setMyLightClass.call(btn8, e, 'light-green');
+    setMyLightClass.call(this, e, 'light-green');
    });
 
   /*
@@ -252,7 +252,7 @@
    *     event, 'light-green'
    */
    btn13.addEventListener('click', function(e){
-    setMyLightClass.bind(btn13)(e, 'light-green');
+    setMyLightClass.bind(this)(e, 'light-green');
    });
 
 
@@ -271,7 +271,7 @@
    *
    * Hint: Do not declare a new function expression as an event handler.
    */
-   btn15.addEventListener('click', setMyLightClass.bind(btn15)(null, 'light-green'));
+   btn15.addEventListener('click', setMyLightClass.bind(btn15, null, 'light-green'));
 
 
 }(window));
